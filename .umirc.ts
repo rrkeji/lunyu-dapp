@@ -22,18 +22,18 @@ export default defineConfig({
         },
         {
           path: './home',
-          component: '@/Home/index',
-        },
-        {
-          path: './download',
-          component: '@/pages/download/index',
-        },
-        {
-          path: './about',
-          component: '@/pages/about/index',
+          component: '@/pages/home/index',
         },
       ],
     },
   ],
   fastRefresh: {},
+  proxy: {
+    '/statics': {
+      target: 'https://www.idns.link/',
+      changeOrigin: true,
+      secure: false,
+      // "pathRewrite": { "^/ci": '' }
+    },
+  },
 });
